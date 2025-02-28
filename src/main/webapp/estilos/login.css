@@ -1,0 +1,102 @@
+:root {
+    --preto: #282A36;
+    --preto-translucido:rgba(40,42,54,0.3);
+    --branco: #F8F8F2;
+    --branco-translucido:rgba(248,248,242,0.3);
+    --roxo: #603d8e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--branco);
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 450px;
+    background: rgba(0,0,0,0.1);
+    border: 2px solid var(--branco-translucido);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px var(--preto-translucido);
+    color: var(--preto);
+    border-radius: 10px;
+    padding: 50px 40px;
+}
+
+.cabecalho {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.wrapper h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-align: center;
+    color: var(--roxo);
+}
+
+.wrapper p {
+    font-size: 16px;
+    text-align: center;
+}
+
+.wrapper .entrada {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.entrada input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid var(--preto-translucido);
+    border-radius: 40px;
+    font-size: 16px;
+    color: var(--preto);
+    padding: 20px 45px 20px 20px;
+}
+
+.entrada input::placeholder {
+    color: var(--preto);
+}
+
+.entrada i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .botao {
+    width: 100%;
+    height: 45px;
+    background: var(--preto);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px var(--branco-translucido);
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--branco);
+    font-weight: 600;
+}
+
+.wrapper .botao:hover {
+    transition: all 0.5s ease;
+    background: var(--roxo);
+}
