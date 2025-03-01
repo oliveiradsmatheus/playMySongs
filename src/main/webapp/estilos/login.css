@@ -1,8 +1,8 @@
 :root {
     --preto: #282A36;
-    --preto-translucido:rgba(40,42,54,0.3);
+    --preto-translucido: rgba(40, 42, 54, 0.3);
     --branco: #F8F8F2;
-    --branco-translucido:rgba(248,248,242,0.3);
+    --branco-translucido: rgba(248, 248, 242, 0.3);
     --roxo: #603d8e;
 }
 
@@ -19,13 +19,11 @@ body {
     align-items: center;
     min-height: 100vh;
     background: var(--branco);
-    background-size: cover;
-    background-position: center;
 }
 
 .wrapper {
     width: 450px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     border: 2px solid var(--branco-translucido);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px var(--preto-translucido);
@@ -94,9 +92,15 @@ body {
     font-size: 16px;
     color: var(--branco);
     font-weight: 600;
+    margin-top: 10px;
 }
 
 .wrapper .botao:hover {
     transition: all 0.5s ease;
     background: var(--roxo);
+}
+
+.botao a {
+    text-decoration: none;
+    color: var(--branco);
 }

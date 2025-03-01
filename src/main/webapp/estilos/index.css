@@ -1,0 +1,84 @@
+:root {
+    --preto: #282A36;
+    --preto-translucido: rgba(40, 42, 54, 0.3);
+    --branco: #F8F8F2;
+    --branco-translucido: rgba(248, 248, 242, 0.3);
+    --roxo: #603d8e;
+    --laranja: #FFB86C;
+    --rosa: #FF79C6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
+}
+
+body {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;*/
+    background: var(--branco);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background: var(--preto);
+    color: var(--roxo);
+}
+
+span {
+    color: var(--rosa);
+}
+
+h1, p {
+    color: var(--branco);
+}
+
+button {
+    padding: 9px 25px;
+    background-color: var(--roxo);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 15px;
+    color: var(--branco);
+}
+
+button:hover {
+    /*background-color: var(--laranja);*/
+    color: var(--preto);
+    background-color : #ff79c6;
+    transition: all 0.5s ease;
+}
+
+.arealogin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nomepag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo {
+    padding-left: 20px;
+}
+
+.usuario {
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--branco);
+}

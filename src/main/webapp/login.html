@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Play My Songs - Entre</title>
-    <link rel="stylesheet" href="./estilos/login.css">
+    <link rel="stylesheet" href="estilos/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
@@ -12,20 +12,21 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
+        <form method="post" action="login-servlet">
             <div class="cabecalho">
                 <h1>LOGIN</h1>
                 <p>Por favor informe o e-mail e a senha!</p>
             </div>
             <div class="entrada">
-                <input type="email" placeholder="Informe o seu e-mail" required>
+                <input id="email" name="email" type="email" placeholder="Informe o seu e-mail">
                 <i class="bx bxs-user"></i>
             </div>
             <div class="entrada">
-                <input type="password" placeholder="Informe a sua senha" required>
+                <input id="senha" name="senha" type="password" placeholder="Informe a sua senha">
                 <i class="bx bxs-lock-alt"></i>
             </div>
             <button type="submit" class="botao">Entrar</button>
+            <a href="index.jsp"><button type="submit" class="botao">Voltar</button></a>
         </form>
     </div>
 </body>
