@@ -3,5 +3,5 @@
 <%
     Usuario usuario = (Usuario) session.getAttribute("email");
     if (usuario == null || !usuario.isAtivo())
-        response.sendRedirect(".");
+        response.sendRedirect("login.html");
 %>

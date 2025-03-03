@@ -1,20 +1,20 @@
 package proj.musica.playmysongs.util;
 
 public class Usuario {
-    private String nome;
+    private String email;
     private boolean ativo;
 
-    public Usuario(String nome, boolean ativo) {
-        this.nome = nome;
+    public Usuario(String email, boolean ativo) {
+        this.email = email;
         this.ativo = ativo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public boolean isAtivo() {

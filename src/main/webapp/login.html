@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Play My Songs - Entre</title>
-    <link rel="stylesheet" href="estilos/login.css">
+    <link rel="stylesheet" href="./estilos/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
         <form method="post" action="login-servlet">
             <div class="cabecalho">
                 <h1>LOGIN</h1>
@@ -26,8 +26,10 @@
                 <i class="bx bxs-lock-alt"></i>
             </div>
             <button type="submit" class="botao">Entrar</button>
-            <a href="index.jsp"><button type="submit" class="botao">Voltar</button></a>
         </form>
+        <a href=".">
+            <button type="submit" class="botao">Voltar</button>
+        </a>
     </div>
 </body>
 </html>
