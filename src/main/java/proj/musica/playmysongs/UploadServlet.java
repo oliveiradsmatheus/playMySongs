@@ -30,18 +30,22 @@ public class UploadServlet extends HttpServlet {
 
             writer = response.getWriter();
             Part filePart = request.getPart("file");
-            String fileName = nome + "_" + estilo + "_" + artista + ".mp3";
-            File fpasta = new File(getServletContext().getRealPath("/") + "/" + "musicas");
-            out = new FileOutputStream(fpasta.getAbsolutePath() + "/" + fileName);
-            filecontent = filePart.getInputStream();
-            int read;
-            byte[] bytes = new byte[1024];
-            while ((read = filecontent.read(bytes)) != -1)
-                out.write(bytes, 0, read);
-            writer.println("Novo arquivo " + fileName + " criado na pasta " + "musicas");
-            out.close();
-            filecontent.close();
-            writer.close();
+            if (filePart != null && filePart.getSize() > 0) {
+                String fileName = nome + "_" + estilo + "_" + artista + ".mp3";
+                File fpasta = new File(getServletContext().getRealPath("/") + "/" + "musicas");
+                fpasta.mkdir();
+                out = new FileOutputStream(fpasta.getAbsolutePath() + "/" + fileName);
+                filecontent = filePart.getInputStream();
+                int read;
+                byte[] bytes = new byte[1024];
+                while ((read = filecontent.read(bytes)) != -1)
+                    out.write(bytes, 0, read);
+                writer.println("Novo arquivo " + fileName + " criado na pasta " + "musicas");
+                out.close();
+                filecontent.close();
+                writer.close();
+            } else
+                writer.println("Nenhum arquivo foi selecionado.");
         } catch (Exception fne) {
             if (writer != null) {
                 writer.println("Erro ao receber o arquivo");

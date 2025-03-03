@@ -1,6 +1,6 @@
 function validarEnvio() {
-    let nome =  document.getElementById("nome").value.replaceAll(" ","").toLowerCase();
-    let artista = document.getElementById("artista").value.replaceAll(" ","").toLowerCase();
+    let nome = document.getElementById("nome").value.replaceAll(" ", "").toLowerCase();
+    let artista = document.getElementById("artista").value.replaceAll(" ", "").toLowerCase();
     let i = 0;
 
     while (i < nome.length && ((nome[i] >= 'a' && nome[i] <= 'z')))
@@ -11,8 +11,7 @@ function validarEnvio() {
             i++;
         if (i === artista.length) {
             enviarArquivo();
-        }
-        else
+        } else
             document.getElementById("mensagem").innerHTML = "Nome do Artista Inválido!";
     } else
         document.getElementById("mensagem").innerHTML = "Nome da Música Inválido!";

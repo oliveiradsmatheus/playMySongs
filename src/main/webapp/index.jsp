@@ -17,6 +17,7 @@
 </head>
 <%
     Usuario usuario = (Usuario) session.getAttribute("email");
+    String busca;
 %>
 <body>
     <header>
@@ -52,14 +53,21 @@
                 </a>
             </div>
             <div class="busca">
-                <label for="busca"></label>
-                <input id="busca" type="search">
-                <button onclick="buscarMusica()">Pesquisar</button>
+                <form action="index.jsp" method="get">
+                    <label for="busca"></label>
+                    <input id="busca" type="search" name="busca">
+                    <button type="submit">Pesquisar</button>
+                </form>
             </div>
             <div class="player">
                 <p class="mdisp">Músicas disponíveis:</p>
                 <div class="musicas" id="listaMusicas">
                     <%
+                        busca = request.getParameter("busca");
+                        try {
+                            busca = busca.replace(" ", "");
+                        } catch (Exception e) {
+                        }
                         File pastaweb = new File(request.getServletContext().getRealPath("musicas"));
                         File[] arquivos = pastaweb.listFiles();
                         if (arquivos != null)
@@ -67,16 +75,18 @@
                                 if (file.isFile()) {
                                     String nomeArquivo = file.getName();
                                     String caminho = "musicas/" + nomeArquivo;
+                                    if (busca == null || nomeArquivo.toLowerCase().contains(busca.toLowerCase())) {
                     %>
-                    <div class="musica-item">
+                    <div>
                         <audio controls>
-                            <source src="<%= caminho %>" type="audio/mpeg">
+                            <source src="<%=caminho%>" type="audio/mpeg">
                         </audio>
                         <p class="musica">
-                            <%= nomeArquivo %>
+                            <%=nomeArquivo%>
                         </p>
                     </div>
                     <%
+                                    }
                                 }
                     %>
                 </div>
@@ -84,5 +94,4 @@
         </div>
     </div>
 </body>
-<script src="javaScript/index.js"></script>
 </html>
